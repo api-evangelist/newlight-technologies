@@ -1,0 +1,65 @@
+generated: '2026-08-26'
+method: probed
+source: live HTTP probes of every host named in apis.yml
+x-note: >-
+  Every /.well-known/ path probed on both Newlight-controlled hosts missed. www.newlight.com is
+  Wix-hosted and answers unrouted /.well-known/* paths with HTTP 400 and an HTML shell;
+  aircarbon.com is Webflow-hosted and answers with HTTP 404 and an 88-byte "Invalid .well-known
+  request" HTML page. Neither is a served document. No WellKnown or SecurityTxt pointer is emitted
+  in apis.yml — this file records a verified absence.
+hosts:
+- host: www.newlight.com
+  platform: Wix
+  documents:
+  - path: /.well-known/security.txt
+    status: 400
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 400
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 400
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 400
+    file: null
+  - path: /.well-known/api-catalog
+    status: 400
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 400
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 400
+    file: null
+  - path: /.well-known/agent.json
+    status: 400
+    file: null
+- host: aircarbon.com
+  platform: Webflow
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+checked: '2026-08-26'

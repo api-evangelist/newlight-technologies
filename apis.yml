@@ -1,17 +1,36 @@
 aid: newlight-technologies
 name: Newlight Technologies
-description: 'Newlight Technologies is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+description: 'Newlight Technologies, Inc. is a Huntington Beach, California biotechnology
+  company founded in 2003 and incorporated in Delaware that produces AirCarbon, a PHB
+  biomaterial made by naturally-occurring ocean microorganisms that consume air and
+  greenhouse gas. The company operates a commercial-scale biomanufacturing plant and
+  sells AirCarbon as resin to industrial partners and as finished goods under the Restore
+  foodware and Covalent fashion-accessory brands, positioning the material as a carbon-negative,
+  home-compostable, ocean-degradable replacement for petroleum plastic. Newlight is a
+  materials manufacturer, not a software vendor: it publishes no developer program, no
+  API reference and no machine-readable contract. Its only agent-reachable surface is the
+  Wix platform Site MCP endpoint that its marketing site advertises in its own llms.txt.'
+image: https://static.wixstatic.com/media/218375_ff4ad9528ae44cdd8a47215d9b4fd1da%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/218375_ff4ad9528ae44cdd8a47215d9b4fd1da%7Emv2.jpg
 url: https://raw.githubusercontent.com/api-evangelist/newlight-technologies/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
+x-harvest-source-url: https://forgeglobal.com/newlight-technologies_stock/
 x-tier: stub
 x-tier-reason: harvest
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-08-26'
 modified: '2026-08-26'
 tags:
 - Company
+- Biotechnology
+- Biomaterials
+- Materials Science
+- Sustainability
+- Carbon Capture
+- Manufacturing
+- Bioplastics
+- Climate Technology
+- Consumer Products
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +39,58 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://forgeglobal.com/newlight-technologies_stock/
+  url: https://www.newlight.com/
+- type: Company
+  url: https://www.newlight.com/company
+- type: Support
+  url: https://www.newlight.com/contact
+- type: FAQ
+  url: https://www.newlight.com/faq
+- type: Careers
+  url: https://www.newlight.com/careers-1
+- type: Press
+  url: https://www.newlight.com/newlight-media
+- type: TermsOfService
+  url: https://aircarbon.com/legal
+- type: GitHubOrganization
+  url: https://github.com/Newlight-Technologies
+- type: LLMsTxt
+  url: llms/newlight-technologies-llms.txt
+- type: MCPServer
+  url: mcp/newlight-technologies-mcp.yml
+- type: DomainSecurity
+  url: security/newlight-technologies-domain-security.yml
+x-enrichment:
+  date: '2026-08-26'
+  status: minimal
+  artifacts_added: 5
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Newlight Technologies manufactures AirCarbon biomaterial and sells resin and finished
+    foodware/accessories — software is not the product, and there is no developer program to
+    profile: api., developer., developers. and docs.newlight.com all return NXDOMAIN, the Wix
+    marketing site and the Webflow aircarbon.com product site expose no reference or spec, and the
+    company's GitHub org holds only three unreleased Elixir Req plugins that consume OTHER
+    vendors' APIs (Acumatica, Amazon SP-API, Wix eCommerce) rather than publish one of its own.
+  evidence:
+  - url: https://api.newlight.com/
+    status: 0
+    note: DNS NXDOMAIN
+  - url: https://developer.newlight.com/
+    status: 0
+    note: DNS NXDOMAIN
+  - url: https://www.newlight.com/openapi.json
+    status: 400
+  - url: https://aircarbon.com/openapi.json
+    status: 404
+  - url: https://www.newlight.com/.well-known/agent-card.json
+    status: 400
+  - url: https://www.newlight.com/llms.txt
+    status: 200
+  - url: https://www.newlight.com/_api/mcp
+    status: 200
+    note: anonymous POST tools/list returned 9 Wix platform Site MCP tools
+  checked: '2026-08-26'

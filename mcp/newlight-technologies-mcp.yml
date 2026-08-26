@@ -1,0 +1,87 @@
+generated: '2026-08-26'
+method: searched
+source: https://www.newlight.com/llms.txt
+status: published
+server:
+  name: newlight-site-mcp
+  transport: http
+  url: https://www.newlight.com/_api/mcp
+  authentication: none
+  advertised_in: llms/newlight-technologies-llms.txt
+x-note: >-
+  This is the Wix platform Site MCP endpoint, served from Newlight Technologies' own host
+  (www.newlight.com is a Wix-hosted marketing site) and advertised by name in the site's own
+  llms.txt under an "AI Agent Access" heading. It exposes public marketing-site content plus the
+  generic Wix business-solutions API surface — it is NOT a Newlight product API. Newlight is a
+  biomaterials manufacturer; it publishes no developer portal, no API reference and no
+  machine-readable contract, and api./developer./developers./docs.newlight.com all return
+  NXDOMAIN. The tool set below is the Wix platform's, identical across every Wix site, so it
+  describes site content retrieval and Wix commerce actions rather than anything specific to
+  AirCarbon. Recorded because the endpoint is genuinely live and returned a real tools/list to an
+  anonymous POST, not because it represents a first-party API program.
+x-evidence:
+  fetched: '2026-08-26'
+  url: https://www.newlight.com/_api/mcp
+  method: POST
+  jsonrpc_method: tools/list
+  http_status: 200
+  content_type: application/json; charset=utf-8
+  raw: mcp/newlight-technologies-mcp-tools.json
+tool_count: 9
+tools:
+- name: ReadFullDocsArticle
+  description: Fetches a full Wix docs article or method article with code examples.
+  input:
+  - articleUrl
+- name: ReadFullDocsMethodSchema
+  description: Fetches the full request/response schema for a Wix API method before calling it.
+  input:
+  - articleUrl
+  - reason
+- name: BrowseWixRESTDocsMenu
+  description: Browses the Wix REST documentation menu.
+  input:
+  - menuUrl
+  - reason
+- name: CallWixSiteAPI
+  description: Calls API methods on the site to act on a visitor's behalf.
+  input:
+  - visitorToken
+  - url
+  - method
+  - body
+- name: GenerateVisitorToken
+  description: Creates a visitor session and returns a visitor access token.
+  input: []
+- name: SearchSiteApiDocs
+  description: Retrieves API documentation for the Wix business solutions installed on this site.
+  input:
+  - searchTerm
+- name: GetBusinessDetails
+  description: Retrieves business and site details such as timezone, email, phone, address.
+  input: []
+- name: SearchInSite
+  description: Searches the site for information.
+  input:
+  - searchTerm
+- name: ExecuteWixAPI
+  description: Executes code against the Wix API surface.
+  input:
+  - code
+  - reason
+  - hasMutations
+  - sourceDocUrls
+  - visitorToken
+crosswalk: null
+crosswalk_reason: >-
+  No tool crosswalk emitted — Newlight Technologies publishes no OpenAPI and no GraphQL surface,
+  so there is no backing operation set to bind these tools to.
+deployment:
+  mode: remote
+  endpoint: https://www.newlight.com/_api/mcp
+  auth: none
+  verified: probed
+  probe: live
+  tools: 9
+  checked: '2026-08-26'
+  source: anonymous POST tools/list, HTTP 200
