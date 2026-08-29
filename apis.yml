@@ -10,6 +10,17 @@ description: 'Newlight Technologies, Inc. is a Huntington Beach, California biot
   materials manufacturer, not a software vendor: it publishes no developer program, no
   API reference and no machine-readable contract. Its only agent-reachable surface is the
   Wix platform Site MCP endpoint that its marketing site advertises in its own llms.txt.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://static.wixstatic.com/media/218375_ff4ad9528ae44cdd8a47215d9b4fd1da%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/218375_ff4ad9528ae44cdd8a47215d9b4fd1da%7Emv2.jpg
 url: https://raw.githubusercontent.com/api-evangelist/newlight-technologies/refs/heads/main/apis.yml
 x-type: company
