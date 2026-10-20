@@ -8,17 +8,15 @@ server:
   url: https://www.newlight.com/_api/mcp
   authentication: none
   advertised_in: llms/newlight-technologies-llms.txt
-x-note: >-
-  This is the Wix platform Site MCP endpoint, served from Newlight Technologies' own host
-  (www.newlight.com is a Wix-hosted marketing site) and advertised by name in the site's own
-  llms.txt under an "AI Agent Access" heading. It exposes public marketing-site content plus the
-  generic Wix business-solutions API surface — it is NOT a Newlight product API. Newlight is a
-  biomaterials manufacturer; it publishes no developer portal, no API reference and no
-  machine-readable contract, and api./developer./developers./docs.newlight.com all return
-  NXDOMAIN. The tool set below is the Wix platform's, identical across every Wix site, so it
-  describes site content retrieval and Wix commerce actions rather than anything specific to
-  AirCarbon. Recorded because the endpoint is genuinely live and returned a real tools/list to an
-  anonymous POST, not because it represents a first-party API program.
+x-note: This is the Wix platform Site MCP endpoint, served from Newlight Technologies' own host (www.newlight.com
+  is a Wix-hosted marketing site) and advertised by name in the site's own llms.txt under an "AI Agent
+  Access" heading. It exposes public marketing-site content plus the generic Wix business-solutions API
+  surface — it is NOT a Newlight product API. Newlight is a biomaterials manufacturer; it publishes no
+  developer portal, no API reference and no machine-readable contract, and api./developer./developers./docs.newlight.com
+  all return NXDOMAIN. The tool set below is the Wix platform's, identical across every Wix site, so it
+  describes site content retrieval and Wix commerce actions rather than anything specific to AirCarbon.
+  Recorded because the endpoint is genuinely live and returned a real tools/list to an anonymous POST,
+  not because it represents a first-party API program.
 x-evidence:
   fetched: '2026-08-26'
   url: https://www.newlight.com/_api/mcp
@@ -73,9 +71,8 @@ tools:
   - sourceDocUrls
   - visitorToken
 crosswalk: null
-crosswalk_reason: >-
-  No tool crosswalk emitted — Newlight Technologies publishes no OpenAPI and no GraphQL surface,
-  so there is no backing operation set to bind these tools to.
+crosswalk_reason: No tool crosswalk emitted — Newlight Technologies publishes no OpenAPI and no GraphQL
+  surface, so there is no backing operation set to bind these tools to.
 deployment:
   mode: remote
   endpoint: https://www.newlight.com/_api/mcp
@@ -85,3 +82,39 @@ deployment:
   tools: 9
   checked: '2026-08-26'
   source: anonymous POST tools/list, HTTP 200
+tool_quality:
+  tool_count: 10
+  tokens_total: 10618
+  tokens_per_tool_median: 986
+  heavy_tools:
+  - name: ExecuteWixAPI
+    tokens: 2345
+  - name: BrowseWixRESTDocsMenu
+    tokens: 1897
+  - name: ReadFullDocsMethodSchema
+    tokens: 1735
+  - name: ReadFullDocsArticle
+    tokens: 1630
+  - name: WixREADME
+    tokens: 1526
+  heavy_tool_count: 5
+  params_total: 16
+  params_undescribed: 0
+  params_described_pct: 100.0
+  tools_with_undescribed_params: 0
+  tools_annotated: 5
+  annotated_pct: 50.0
+  state_changing_unhinted:
+  - GenerateVisitorToken
+  tools_missing_schema: 0
+  short_descriptions: 0
+  duplicate_descriptions: 0
+  duplicate_names: 0
+  nonportable_names: []
+  output_schema_count: 0
+  token_estimate: chars/3.6 of each compact tool definition
+  source: mcp/newlight-technologies-mcp-tools.json
+  measured: '2026-10-20'
+  scored: false
+  note: Facts from the saved tools/list capture (mcp_tool_quality.py); recorded, not scored. Checks learned
+    from Glimind's agent-readiness audit.
